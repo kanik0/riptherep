@@ -5,7 +5,7 @@ This extension tries to unlock the content of the articles on https://rep.repubb
 
 # Usage
 Add the extension to Chrome:
-- Clone the repository
+- Clone/download the repository
 - Go to your extensions settings page
 - Enable Developer Mode
 - Click on "Load unpacked extension" and select the folder where you cloned this repository

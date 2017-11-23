@@ -1,6 +1,6 @@
 {
   "name": "RiptheRep",
-  "version": "0.3",
+  "version": "0.3.1",
   "manifest_version": 2,
   "description": "This extension allows the users to unlock some of the content of rep.repubblica.it.",
 
@@ -16,7 +16,7 @@
 
   "content_scripts": [{
     "matches": ["*://rep.repubblica.it/*"],
-    "js": ["content_script.js", "jquery-2.2.0.min.js"],
+    "js": ["content_script.js"],
     "run_at": "document_end"
   }],
 

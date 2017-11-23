@@ -1,5 +1,5 @@
 # riptherep
-RiptheRep Chrome Extension
+RiptheRep Chrome Extension 0.2
 
 This extension tries to unlock the content of the articles on https://rep.repubblica.it.
 

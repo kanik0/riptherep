@@ -1,22 +1,20 @@
+// Waits until the page is fully loaded
 setTimeout(function(){
 
-a=document.querySelectorAll('news-app');
-b=a[0].shadowRoot;
-c=b.childNodes[17];
-d=c.childNodes[3];
-e=d.shadowRoot.childNodes[2];
-f=e.childNodes[1];
-g=f.childNodes[1];
-h=g.childNodes[1];
-i=h.shadowRoot.childNodes[11];
-l=i.childNodes[8];
-m=l.childNodes[0];
-n=m.childNodes[3];
-o=n.childNodes[0];
-targetremove=o.childNodes[0];
-targetfix=o.childNodes[1];
+// Moves to the nodes that must be fixed
+newsapp_node=document.querySelectorAll('news-app');
+temp0=newsapp_node[0].shadowRoot;
+ironlazypages_node=temp0.querySelectorAll('iron-lazy-pages')[0];
+newsarticle_node=ironlazypages_node.querySelectorAll('news-article')[0];
+divampdochost_node=newsarticle_node.shadowRoot.querySelectorAll('div.amp-doc-host')[0];
+body_node=divampdochost_node.shadowRoot.body;
+article_node=body_node.querySelectorAll('div.detail-article_body')[0];
 
-targetremove.parentNode.removeChild(targetremove);
-targetfix.removeAttribute('amp-access-hide');
+targetremove_node=article_node.querySelectorAll('[amp-access="NOT (showContent)"]')[0];
+targetfix_node=article_node.querySelectorAll('[amp-access="showContent"]')[0];
+
+// Fixes the nodes
+targetremove_node.parentNode.removeChild(targetremove_node);
+targetfix_node.removeAttribute('amp-access-hide');
 }, 2200);
 

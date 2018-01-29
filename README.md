@@ -10,7 +10,7 @@ Add the extension to Chrome:
 - Enable Developer Mode
 - Click on "Load unpacked extension" and select the folder where you cloned this repository
 
-The extention woks straight away, begin browsing :) 
+The extention works straight away, begin browsing :) 
 If the paywall is still there, please try reloading the page!
 
 # TODO

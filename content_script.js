@@ -1,20 +1,26 @@
+// Redirects to the right page
+pathname = window.location.pathname;
+url = "https://rep.repubblica.it/ws/detail" + pathname.substr(4);
+if (pathname.substr(0,4)=="/pwa"){
+window.location.replace(url);
+}
+
 // Waits until the page is fully loaded
 setTimeout(function(){
 
-// Moves to the nodes that must be fixed
-newsapp_node=document.querySelectorAll('news-app');
-temp0=newsapp_node[0].shadowRoot;
-ironlazypages_node=temp0.querySelectorAll('iron-lazy-pages')[0];
-newsarticle_node=ironlazypages_node.querySelectorAll('news-article')[0];
-divampdochost_node=newsarticle_node.shadowRoot.querySelectorAll('div.amp-doc-host')[0];
-temp1=divampdochost_node.shadowRoot;
-article_node=temp1.querySelectorAll('div.detail-article_body')[0]
+// Function that gets node by XPath
+function getElementByXpath(path) {
+  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
 
-targetremove_node=article_node.querySelectorAll('[amp-access="NOT (showContent)"]')[0];
-targetfix_node=article_node.querySelectorAll('[amp-access="showContent"]')[0];
+// Selects the node to remove and deletes it
+targetremove = getElementByXpath("/html/body/main/article/div[3]/div/div[1]");
+targetremove.parentNode.removeChild(targetremove);
 
-// Fixes the nodes
-targetremove_node.parentNode.removeChild(targetremove_node);
-targetfix_node.removeAttribute('amp-access-hide');
+// Selects the node to fix and edits it
+targetfix =  getElementByXpath("/html/body/main/article/div[3]/div/div");
+targetfix.removeAttribute('amp-access-hide');
+
 }, 4000);
+
 

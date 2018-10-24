@@ -1,8 +1,8 @@
 {
   "name": "RiptheRep",
-  "version": "0.4",
+  "version": "0.5",
   "manifest_version": 2,
-  "description": "This extension allows the users to unlock some of the content of rep.repubblica.it.",
+  "description": "This extension allows the users to unlock the content of rep.repubblica.it and remove the 5 article per day limit on ilsole24ore.com.",
 
   "icons": {
     "24": "icon24.png",
@@ -15,7 +15,7 @@
   },
 
   "content_scripts": [{
-    "matches": ["*://rep.repubblica.it/*"],
+    "matches": ["*://rep.repubblica.it/*", "*://www.ilsole24ore.com/*"],
     "js": ["content_script.js"],
     "run_at": "document_end"
   }],

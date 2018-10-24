@@ -1,7 +1,7 @@
 # RiptheRep
-RiptheRep Chrome Extension 0.3.1
+RiptheRep Chrome Extension 0.5
 
-This extension tries to unlock the content of the articles on https://rep.repubblica.it. 
+This extension unlocks the content of the articles on https://rep.repubblica.it and removes the 5 articles per day limit on https://www.ilsole24ore.com.
 
 # Usage
 Add the extension to Chrome:
@@ -10,7 +10,7 @@ Add the extension to Chrome:
 - Enable Developer Mode
 - Click on "Load unpacked extension" and select the folder where you cloned this repository
 
-The extention works straight away, begin browsing :) 
+The extension works straight away, begin browsing :)
 If the paywall is still there, please try reloading the page!
 
 # TODO

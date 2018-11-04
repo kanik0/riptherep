@@ -3,7 +3,7 @@ function getElementByXpath(path) {
   return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
 
-// Sole or Rep
+// Which site
 site = window.location.origin;
 
 // www.sole24ore.com (deletes the cookies)
@@ -40,6 +40,23 @@ if (site == "https://rep.repubblica.it"){
     // Selects the node to fix and edits it
     targetfix =  getElementByXpath("/html/body/main/article/div[3]/div/div");
     targetfix.removeAttribute('amp-access-hide');
+
+  }, 4000);
+}
+
+// Tirreno
+if (site == ("http://iltirreno.gelocal.it" || "https://iltirreno.gelocal.it")){
+
+  // Waits until the page is fully loaded
+    setTimeout(function(){
+
+    // Selects the node to remove and deletes it
+    targetremove = getElementByXpath('//*[@id="container"]/div[3]/article/div/div[3]/div');
+    targetremove.parentNode.removeChild(targetremove);
+
+    // Selects the node to fix and edits it
+    targetfix=getElementByXpath('//*[@id="container"]/div[3]/article/div/div[3]/span');
+    targetfix.removeAttribute('style');
 
   }, 4000);
 }

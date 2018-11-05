@@ -71,12 +71,9 @@ if (site == "https://www.economist.com"){
     targetfix=getElementByXpath('//*[@id="app-mount"]/div');
     targetfix.removeAttribute('class');
 
-    // Selects the nodes to remove and deletes them
-    //targetremove1 = getElementByXpath('//*[@id="app-mount"]/div/div[2]/div[1]/main/div/div[2]/div/article/div[1]');
-    //targetremove1.parentNode.removeChild(targetremove1);
-
-    targetremove2 = getElementByXpath('//*[@id="piano__in-line-paywall"]');
-    targetremove2.parentNode.removeChild(targetremove2);
+    // Selects the node to remove and deletes it
+    targetremove = getElementByXpath('//*[@id="piano__in-line-paywall"]');
+    targetremove.parentNode.removeChild(targetremove);
 
   }, 1500);
 }

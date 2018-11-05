@@ -61,6 +61,26 @@ if (site == ("http://iltirreno.gelocal.it" || "https://iltirreno.gelocal.it")){
   }, 4000);
 }
 
+// Economist
+if (site == "https://www.economist.com"){
+
+  // Waits until the page is fully loaded
+    setTimeout(function(){
+
+    // Selects the node to fix and edits it
+    targetfix=getElementByXpath('//*[@id="app-mount"]/div');
+    targetfix.removeAttribute('class');
+
+    // Selects the nodes to remove and deletes them
+    //targetremove1 = getElementByXpath('//*[@id="app-mount"]/div/div[2]/div[1]/main/div/div[2]/div/article/div[1]');
+    //targetremove1.parentNode.removeChild(targetremove1);
+
+    targetremove2 = getElementByXpath('//*[@id="piano__in-line-paywall"]');
+    targetremove2.parentNode.removeChild(targetremove2);
+
+  }, 1500);
+}
+
 // Limes (This works, but it's wrong. Move to background.js)
 if (site == ("http://www.limesonline.com" || "https://www.limesonline.com")){
   chrome.webRequest.onBeforeRequest.addListener(

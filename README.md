@@ -1,11 +1,12 @@
 # RiptheRep
-RiptheRep Chrome Extension 0.6.1
+RiptheRep Chrome Extension 0.6.5
 
 This extension allows the users to remove the paywall and unlock the content of some Italian news websites.
 
 Supported websites:
 - https://rep.repubblica.it (removes the paywall and unlocks the content of the article)
 - https://www.ilsole24ore.com (removes the 5 articles per day limit)
+- https://www.economist.com (removes the one article a day limit)
 - http://iltirreno.gelocal.it (removes the paywall and unlocks the content of the article)
 - http://www.limesonline.com (removes the paywall from all the pages)
 
@@ -19,7 +20,7 @@ Add the extension to Chrome:
 - Click on "Load unpacked extension" and select the folder where you cloned this repository
 
 The extension works straight away, begin browsing :)
-If the paywall is still there, please try reloading the page!
+If the paywall is still there, please try **reloading** the page!
 
 **Warning**: On ilsole24ore.com and www.limesonline.com you must be logged out in order to successfully remove the paywall.
 

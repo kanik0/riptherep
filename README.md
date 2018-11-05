@@ -7,7 +7,7 @@ Supported websites:
 - https://rep.repubblica.it (removes the paywall and unlocks the content of the article)
 - https://www.ilsole24ore.com (removes the 5 articles per day limit)
 - http://iltirreno.gelocal.it (removes the paywall and unlocks the content of the article)
-- http://http://www.limesonline.com (removes the paywall from all pages)
+- http://www.limesonline.com (removes the paywall from all pages)
 
 Feel free to request new websites to be added
 

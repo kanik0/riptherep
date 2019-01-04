@@ -39,7 +39,7 @@ if (site == "https://rep.repubblica.it"){
 
     // Selects the node to fix and edits it
     targetfix =  getElementByXpath("/html/body/main/article/div[3]/div/div");
-    targetfix.removeAttribute('amp-access-hide');
+    targetfix.removeAttribute('subscriptions-section');
 
   }, 4000);
 }

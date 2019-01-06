@@ -31,7 +31,7 @@ if (site == "https://rep.repubblica.it"){
   }
 
   // Waits until the page is fully loaded
-  setTimeout(function(){
+  window.onload = function(){
 
     // Selects the node to remove and deletes it
     targetremove = getElementByXpath("/html/body/main/article/div[3]/div/div[1]");
@@ -41,14 +41,14 @@ if (site == "https://rep.repubblica.it"){
     targetfix =  getElementByXpath("/html/body/main/article/div[3]/div/div");
     targetfix.removeAttribute('subscriptions-section');
 
-  }, 4000);
+  }
 }
 
 // Tirreno
 if (site == ("http://iltirreno.gelocal.it" || "https://iltirreno.gelocal.it")){
 
   // Waits until the page is fully loaded
-    setTimeout(function(){
+    window.onload = function(){
 
     // Selects the node to remove and deletes it
     targetremove = getElementByXpath('//*[@id="container"]/div[3]/article/div/div[3]/div');
@@ -58,14 +58,14 @@ if (site == ("http://iltirreno.gelocal.it" || "https://iltirreno.gelocal.it")){
     targetfix=getElementByXpath('//*[@id="container"]/div[3]/article/div/div[3]/span');
     targetfix.removeAttribute('style');
 
-  }, 4000);
+  }
 }
 
 // Economist
 if (site == "https://www.economist.com"){
 
   // Waits until the page is fully loaded
-    setTimeout(function(){
+    window.onload = function(){
 
     // Selects the node to fix and edits it
     targetfix=getElementByXpath('//*[@id="app-mount"]/div');
@@ -75,7 +75,7 @@ if (site == "https://www.economist.com"){
     targetremove = getElementByXpath('//*[@id="piano__in-line-paywall"]');
     targetremove.parentNode.removeChild(targetremove);
 
-  }, 1500);
+  }
 }
 
 // Limes (This works, but it's wrong. Move to background.js)

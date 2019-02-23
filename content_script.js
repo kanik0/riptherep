@@ -78,15 +78,3 @@ if (site == "https://www.economist.com"){
   }
 }
 
-// Limes (This works, but it's wrong. Move to background.js)
-if (site == ("http://www.limesonline.com" || "https://www.limesonline.com")){
-  chrome.webRequest.onBeforeRequest.addListener(
-  function() { return {cancel: true}; },
-  {
-    //urls: ["<all_urls>"],
-    urls: ["*://www.repstatic.it/minify/sites/limesonline/www/common/*"],
-    types: ["script"]
-  },
-  ["blocking"]
-  );
-}

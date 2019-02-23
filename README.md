@@ -1,5 +1,5 @@
 # RiptheRep
-RiptheRep Chrome Extension 0.7
+RiptheRep Chrome Extension 0.7.1
 
 This extension allows the users to remove the paywall and unlock the content of some Italian news websites.
 

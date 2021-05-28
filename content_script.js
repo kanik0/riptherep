@@ -20,6 +20,34 @@ if (site == "https://www.ilsole24ore.com"){
                   + ";domain=.ilsole24ore.com;path=/";
 }
 
+// repubblica.it
+if (site.indexOf("repubblica.it") != -1 && document.getElementById("paywall") != null){
+    window.onload = function(){
+      articleURL = window.location.origin + window.location.pathname
+      ampURL = articleURL + "amp/"
+
+      fetch(ampURL).then(function (response) {
+      	return response.text();
+      }).then(function (html) {
+        var parser = new DOMParser();
+      	var doc = parser.parseFromString(html, 'text/html');
+
+      	article = doc.getElementsByClassName("article-body")[0]
+        article.querySelectorAll("[subscriptions-section='content-not-granted']")[0].remove()
+        article.querySelectorAll("[subscriptions-section='content']")[0].setAttribute("subscriptions-section", "")
+        article.className = "story__content"
+        article.querySelectorAll("[subscriptions-section='']")[0].className = "story__text"
+
+        document.getElementById("article-body").replaceWith(article)
+        document.getElementById("paywall").remove()
+
+      }).catch(function (err) {
+      	console.warn('Something went wrong.', err);
+      });
+    }
+
+}
+
 
 // rep.repubblica.it
 if (site == "https://rep.repubblica.it"){
@@ -77,4 +105,3 @@ if (site == "https://www.economist.com"){
 
   }
 }
-

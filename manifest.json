@@ -1,6 +1,6 @@
 {
   "name": "RiptheRep",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "manifest_version": 2,
   "description": "This extension allows the users to remove the paywall and unlock the content of some Italian news websites.",
 
@@ -16,7 +16,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://rep.repubblica.it/*", "*://www.ilsole24ore.com/*", "*://iltirreno.gelocal.it/*", "*://www.economist.com/*"],
+      "matches": ["*://repubblica.it/*", "*://*.repubblica.it/*", "*://www.ilsole24ore.com/*", "*://iltirreno.gelocal.it/*", "*://www.economist.com/*"],
       "js": ["content_script.js"],
       "run_at": "document_end"
     }

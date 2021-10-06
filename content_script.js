@@ -32,7 +32,7 @@ if (site.indexOf("repubblica.it") != -1 && document.getElementById("paywall") !=
         var parser = new DOMParser();
       	var doc = parser.parseFromString(html, 'text/html');
 
-      	article = doc.getElementsByClassName("article-body")[0]
+      	article = doc.getElementsByClassName("story__text")[0]
         article.querySelectorAll("[subscriptions-section='content-not-granted']")[0].remove()
         article.querySelectorAll("[subscriptions-section='content']")[0].setAttribute("subscriptions-section", "")
         article.className = "story__content"

@@ -73,20 +73,37 @@ if (site == "https://rep.repubblica.it"){
 }
 
 // Tirreno
-if (site == ("http://iltirreno.gelocal.it" || "https://iltirreno.gelocal.it")){
+if (site == ("https://iltirreno.gelocal.it" || "http://iltirreno.gelocal.it")){
 
   // Waits until the page is fully loaded
-    window.onload = function(){
+  window.onload = function(){
 
-    // Selects the node to remove and deletes it
-    targetremove = getElementByXpath('//*[@id="container"]/div[3]/article/div/div[3]/div');
-    targetremove.parentNode.removeChild(targetremove);
+    articleURL = window.location.origin + window.location.pathname
+      if(articleURL.substr(-1) == "/"){
+          ampURL = articleURL + "amp/"
+      }
+      else{
+          ampURL = articleURL + "/amp/"
+      }
+      fetch(ampURL).then(function (response) {
+      	return response.text();
+      }).then(function (html) {
+        var parser = new DOMParser();
+      	var doc = parser.parseFromString(html, 'text/html');
 
-    // Selects the node to fix and edits it
-    targetfix=getElementByXpath('//*[@id="container"]/div[3]/article/div/div[3]/span');
-    targetfix.removeAttribute('style');
-
-  }
+      	article = doc.getElementsByClassName("article-body")[0]
+        article.querySelectorAll("[amp-access='NOT (showContent)']")[0].remove()
+        article.querySelectorAll("[amp-access='showContent']")[0].setAttribute("amp-access-hide", "")
+        article.className = "entry_content"
+        //article.querySelectorAll("[subscriptions-section='']")[0].className = "entry_content"
+  
+        document.getElementById("article-body").replaceWith(article)
+        document.getElementsByClassName("paywall-adagio")[0].remove()
+  
+      }).catch(function (err) {
+        console.warn('Something went wrong.', err);
+      });
+    }
 }
 
 // Economist
